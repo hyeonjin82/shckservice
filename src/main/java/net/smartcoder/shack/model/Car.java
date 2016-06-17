@@ -1,6 +1,7 @@
 package net.smartcoder.shack.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,6 +45,9 @@ public class Car {
 	@NotEmpty
 	@Column(name = "engine_type", nullable = false)
 	private String engineType;
+	
+	@Column(name = "regdate", nullable = false)
+	private Date regdate;
 
 	@NotEmpty
 	@Digits(integer = 10, fraction = 2)
@@ -52,6 +56,26 @@ public class Car {
 
 	@Column(name = "image")
 	private String image;
+	
+	@Column(name = "description")
+	private String description;
+	
+	
+	public Date getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public long getId() {
 		return id;
